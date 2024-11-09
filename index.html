@@ -14,7 +14,7 @@
     }
 
     body {
-      background-color: #1a1a1a;
+      background-color: #0a0a0a;
       color: #33ff33;
       font-family: monospace;
       display: flex;
@@ -67,17 +67,15 @@
     start = Date.now()
     const terminalText = [
         "info@appelmoesgg ~: whoami",
-        "Loading About Me...",
+        "appelmoesgg\\info",
         "----------------------",
-        "AppelmoesGG:",
         "-Expl0iting games and other things",
         "-Helping people that cant code",
         "-Making random things to annoy people",
         "----------------------",
-        "GitHub: <a href='https://github.com/appelmoegg' target='_blank'>https://github.com/appelmoegg</a>",
-        "Discord: <a href='https://discordapp.com/users/725019364755243038' target='_blank'>https://discordapp.com/users/725019364755243038</a>",
-        "Thanks for visiting!",
-        "info@appelmoesgg ~:"
+        "GitHub: <a href='https://github.com/appelmoesgg' target='_blank'>appelmoesgg</a>",
+        "Discord: <a href='https://discordapp.com/users/725019364755243038' target='_blank'>appelmoesgg</a>",
+        "Thanks for visiting!"
     ];
 
     const outputDiv = document.getElementById('output');
@@ -87,12 +85,19 @@
     function typeLine() {
         if (lineIndex < terminalText.length + 1) {
             if (lineIndex == terminalText.length) {
-                const line = document.createElement('div');
+               
+                line = document.createElement('div');
                 line.classList.add('line');
                 outputDiv.appendChild(line);
-
                 line.innerText = "You have spent " + (Date.now() - start) / 1000 + " seconds here!"
-                document.querySelector('.caret').style.display = 'none';
+
+
+                line = document.createElement('div');
+                line.classList.add('line');
+                outputDiv.appendChild(line);
+                line.innerText = "info@appelmoesgg ~:"
+
+                document.querySelector('.caret').style.display = "none"
             } else {
 
                 const line = document.createElement('div');
@@ -113,11 +118,11 @@
                             tempLine += currentLine[charIndex];
                             line.textContent = tempLine;
                             charIndex++;
-                            setTimeout(typeChar, 50);
+                            setTimeout(typeChar, 30);
                         } else {
                             charIndex = 0;
                             lineIndex++;
-                            setTimeout(typeLine, 500);
+                            setTimeout(typeLine, 300);
                         }
                     };
                     typeChar();
