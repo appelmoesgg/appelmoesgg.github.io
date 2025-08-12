@@ -58,6 +58,40 @@
     a {
       color: #33ff33;
     }
+
+.image-container {
+        display: flex; /* Use flexbox to align images horizontally */
+        gap: 10px; /* Space between images */
+        align-items: center; /* Vertically align items in the container */
+        flex-wrap: wrap; /* Allow images to wrap to the next line on small screens */
+        justify-content: center; /* Center images if they wrap */
+        width: 100%; /* Ensure container takes full width for wrapping */
+        max-width: 800px; /* Match terminal max-width */
+    }
+
+    .image-container img {
+        max-width: 100px; /* Default limit image width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Slightly rounded corners for images */
+        display: block; /* Ensures images behave well within flexbox */
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 600px) {
+        .terminal {
+            padding: 15px; /* Slightly less padding on smaller screens */
+        }
+        .image-container img {
+            max-width: 70px; /* Smaller max-width for images on mobile */
+        }
+    }
+
+    /* Further adjustments for very small mobile screens (e.g., iPhone SE) */
+    @media (max-width: 400px) {
+        .image-container img {
+            max-width: 50px; /* Even smaller images on very narrow screens */
+        }
+    }
   </style>
 </head>
 <body>
@@ -66,7 +100,7 @@
     <div class="caret"></div>
   </div>
 
- <br><br><div>
+ <br><br><div class="image-container">
       <img src="https://images.collectandgo.be/images/step/JPG/JPG/500x500/std.lang.all/37/16/asset-3233716.jpg">.<img src="https://media1.tenor.com/m/3_mXIoBPNhoAAAAC/party-parrot.gif">
     </div>
 
